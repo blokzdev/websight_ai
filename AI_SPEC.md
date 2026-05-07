@@ -3,8 +3,11 @@
 Decisions captured. Open questions in §6 are scoped to specific releases.
 
 **Identity:**
-- Product name: **WebSight AI**
-- Application id: **`io.github.blokzdev.websight_ai`** (GitHub-derived; migrate to a domain-derived id only if/when a real brand emerges)
+- Product name: **WebSight** (marketing surface — the AI capability is a feature of WebSight, not a separate product)
+- Project scope (this repo): **WebSight-AI** (dev-facing name for the AI variant codebase work)
+- Application id: **`cc.websight.app`** (domain-derived from `websight.cc`)
+- GitHub repo: `blokzdev/websight_ai` (disambiguates from the original public `blokzdev/websight` template)
+- Dart package identity: `websight` (codebase keeps the WebSight package name; no Dart-side rename)
 - v1 spearhead: **Wikipedia co-pilot**
 - v1 minimum Android API: **34** (Android 14)
 - v1 platform: **Android only**
@@ -102,7 +105,7 @@ These rules apply to every PR, every file, every change. Don't break them quietl
    - Anything in the spec that doesn't match the actual code (call out spec drift now)
    - Anything in the spec that's underspecified for you to act on
 
-4. **Propose the rename plan.** Enumerate `websight` → `websight_ai` mechanical changes with file paths and counts. Don't apply yet.
+4. **Propose the identity migration plan.** Enumerate the Android-side identity migration (application id `com.app.websight` → `cc.websight.app`, Kotlin source-path migration `com/app/websight/` → `cc/websight/app/`, package declaration updates in every `.kt` file, method channel namespace) with file paths and counts. The Dart-side codebase is *not* renamed — it keeps `websight` as its package identity, reflecting that this repo is the AI variant of the same WebSight product, not a separate fork. Don't apply yet.
 
 5. **Surface clarifying questions.** Beyond the open questions in §6 — anything ambiguous in the design that would block your first PR.
 
@@ -121,7 +124,7 @@ Tagged by blocking status:
 
 **Locked decisions:**
 - ✅ v1 demo target: **Wikipedia**
-- ✅ App identity: `io.github.blokzdev.websight_ai`, product "WebSight AI"
+- ✅ App identity: application id `cc.websight.app`, product "WebSight" (marketing surface), Dart package `websight` (no rename), repo `websight_ai` (GitHub disambiguation only)
 - ✅ Min Android API: **34** (Android 14)
 - ✅ `ai.security.edge_defense.mode`: **`auto`**, with UI configurability surfaced in AI Settings
 - ✅ AICore download UX: **lazy** (on first edge call, with progress indicator)
@@ -163,8 +166,8 @@ Tagged by blocking status:
 After Claude Code's first session output (substrate summary + rename plan + clarifying questions), the first mergeable PR is **scaffolding only — no agent runtime yet**.
 
 **In scope:**
-- Repo rename: `websight` → `websight_ai`. pubspec name, all Dart imports, asset paths, README, CI badges.
-- App identity: application id set to `io.github.blokzdev.websight_ai` in `android/app/build.gradle`. Product name "WebSight AI" in manifest label and store listing copy.
+- Identity migration (Android-side only): application id `com.app.websight` → `cc.websight.app` in `android/app/build.gradle`. Kotlin source path `android/app/src/main/kotlin/com/app/websight/` → `android/app/src/main/kotlin/cc/websight/app/`. Package declarations updated in every `.kt` file. Method channel namespace updated. README updated to mention the AI capability layer. **The Dart-side codebase keeps `websight` as its package identity** (`pubspec.yaml` `name: websight`, all `package:websight/...` imports unchanged) — this repo is the AI variant of the same WebSight product, not a separate fork.
+- App identity: application id set to `cc.websight.app`. Product name "WebSight" in manifest label (the marketing surface remains "WebSight" — the AI capability is a feature, not a separate product).
 - New empty directories:
   - `lib/ai/`, `lib/ai/edge/`, `lib/ai/router/`, `lib/ai/billing/`, `lib/ai/memory/`, `lib/ai/providers/`
   - `lib/ai_ui/`, `lib/ai_ui/onboarding/`, `lib/ai_ui/settings/`
