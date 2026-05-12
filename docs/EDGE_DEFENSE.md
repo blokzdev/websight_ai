@@ -253,7 +253,7 @@ lib/ai/edge/
   cloud_fallback_edge_provider.dart   # Dart-side, uses HTTP via cheap provider
   defense_coordinator.dart
   models.dart                         # shared types
-android/app/src/main/kotlin/com/app/websight_ai/edge/
+android/app/src/main/kotlin/io/github/blokzdev/websight_ai/edge/
   EdgeDefensePlugin.kt                # registers method channel
   AICoreClient.kt                     # ML Kit GenAI wrapper
   CapabilityDetector.kt               # AICore availability probe
@@ -261,7 +261,7 @@ android/app/src/main/kotlin/com/app/websight_ai/edge/
   Models.kt                           # serialization for the channel
 ```
 
-The method channel name is `com.app.websight_ai/edge_defense`. Methods:
+The method channel name is `io.github.blokzdev.websight_ai/edge_defense`. Methods:
 
 - `is_available` — returns `{available: bool, tier: 'A'|'B'|'C', reason: string?}`
 - `classify_injection` — args `{text: string}`, returns serialized `ClassifierVerdict`

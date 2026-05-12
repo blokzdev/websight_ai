@@ -94,7 +94,7 @@ WebSight uses `provider` (the package) for dependency injection and `ChangeNotif
 WebSight-AI has two parallel provider abstractions; both follow the same conventions.
 
 - **`AgentProvider`** (`lib/ai/providers/agent_provider.dart`) — main agent reasoning. Implementations: `AnthropicProvider`, `OpenAIProvider`, `GoogleProvider`, `InMemoryAgentProvider` (test fake).
-- **`EdgeDefenseProvider`** (`lib/ai/edge/edge_defense_provider.dart`) — defense-layer ops (paraphrase, classify, reflect, summarize). Implementations: `AICoreEdgeProvider` (Android Gemini Nano), `CloudFallbackEdgeProvider` (cheap cloud model via BYOK), `AppleFoundationEdgeProvider` (iOS, v1.x), `InMemoryEdgeProvider` (test fake).
+- **`EdgeDefenseProvider`** (`lib/ai/edge/edge_defense_provider.dart`) — defense-layer ops (paraphrase, classify, reflect, summarize). Implementations: `AICoreEdgeProvider` (Android Gemini Nano), `CloudFallbackEdgeProvider` (cheap cloud model via BYOK), `AppleFoundationEdgeProvider` (iOS, v3.x), `InMemoryEdgeProvider` (test fake).
 
 Conventions for both:
 - **Stream events, don't return blobs.** Return `Stream<AgentEvent>` / `Stream<EdgeEvent>` for any operation that can be incremental. Callers can collect or process inline.
@@ -222,7 +222,7 @@ See [`docs/AI_TEST_STRATEGY.md`](docs/AI_TEST_STRATEGY.md) for what to test and 
 - **Conventional commits are not required**, but if you use them, be consistent.
 - **PRs are small.** Every PR in the ladder (see `AI_SPEC.md` §7) is roughly one feature or one refactor. If a PR touches more than ~600 lines of non-trivial code, split it.
 - **Every PR runs the full CI gate.** Format check, `flutter analyze`, `flutter test --coverage`, debug Android build. None of these may regress.
-- **No squash-on-merge for substantive changes.** Preserve commit history; it's part of the spec drift trail.
+- **Linear history on `main`: squash-merge or rebase-merge, not merge commits.** The AI fork keeps `main` linear so the mainline narrative reads as one commit per PR. Within a feature branch, prefer small per-concern commits so review can follow the work; squash combines them into a single mainline commit at merge. See `CLAUDE.md` §3 for the operating policy.
 - **PR description includes:** what changed, why, what's tested, what's deferred, any spec drift introduced.
 
 ---

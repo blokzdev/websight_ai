@@ -147,7 +147,7 @@ Edge providers need their own test surface because the model lives on-device.
 - Pixel 7 on Android 14 (Tier B without AICore) — cloud-fallback path tested
 - API 33 emulator (Tier C) — verifies the AI build manifest correctly excludes these devices, OR the cloud-only path works for Path B compatibility scenarios
 
-### 3.5 `AppleFoundationEdgeProvider` tests (v1.x)
+### 3.5 `AppleFoundationEdgeProvider` tests (v3.x)
 
 Same pattern as `AICoreEdgeProvider` adapted to Swift / iOS:
 - Swift-side unit tests for the Foundation Models wrapper
@@ -155,7 +155,7 @@ Same pattern as `AICoreEdgeProvider` adapted to Swift / iOS:
 - Captured fixtures from real Apple Foundation Models output
 - XCTest integration tests in CI on a Mac runner
 
-Lands with iOS support in v1.x.
+Lands with iOS support in v3.x.
 
 ---
 

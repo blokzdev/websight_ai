@@ -433,7 +433,7 @@ Verdict effects:
 - `high` — escalate the host's trust to `cautious` for the rest of this task. If `paraphrase.on_classifier_flag: true`, also force paraphrasing.
 
 The classifier can run via:
-- **Edge (recommended on supported devices):** Gemini Nano via ML Kit GenAI on Tier A Android devices, Apple Foundation Models on supported iOS devices (v1.x). Free, ~50–200ms latency, page content stays on-device.
+- **Edge (recommended on supported devices):** Gemini Nano via ML Kit GenAI on Tier A Android devices, Apple Foundation Models on supported iOS devices (v3.x). Free, ~50–200ms latency, page content stays on-device.
 - **Cloud:** cheap-tier model from the configured provider (Haiku, GPT-5-Nano, Gemini Flash). ~$0.0001 per page, 100–300ms.
 - **Local heuristic:** regex / keyword-driven. No cost, no latency, less recall.
 
