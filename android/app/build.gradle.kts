@@ -102,19 +102,19 @@ flutter {
 
 dependencies {
     // AndroidX core libraries
-    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("androidx.core:core-ktx:1.18.0")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("androidx.activity:activity-ktx:1.13.0")
-    implementation("com.google.android.material:material:1.12.0")
+    implementation("com.google.android.material:material:1.13.0")
 
     // CameraX (used by ScannerActivity). Pinned to 1.5.1 to match what the
     // camera_android_camerax Flutter plugin pulls transitively; Gradle would
     // resolve to the higher version anyway, but pinning matches keeps the
     // AAR-metadata check happy.
-    implementation("androidx.camera:camera-core:1.6.0")
-    implementation("androidx.camera:camera-camera2:1.6.0")
-    implementation("androidx.camera:camera-lifecycle:1.6.0")
-    implementation("androidx.camera:camera-view:1.6.0")
+    implementation("androidx.camera:camera-core:1.6.1")
+    implementation("androidx.camera:camera-camera2:1.6.1")
+    implementation("androidx.camera:camera-lifecycle:1.6.1")
+    implementation("androidx.camera:camera-view:1.6.1")
 
     // Guava brings `com.google.common.util.concurrent.ListenableFuture`,
     // which `ProcessCameraProvider.getInstance()` returns. Without it on
