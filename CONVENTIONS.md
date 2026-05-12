@@ -134,7 +134,7 @@ See `AI_DESIGN.md` §2, §17 and `EDGE_DEFENSE.md` §3, §4 for the full interfa
 
 ## 6. Imports
 
-- **Use `package:` prefix for everything in `lib/`.** `import 'package:websight_ai/ai/agent_loop.dart';` — not relative imports. WebSight's `analysis_options.yaml` enforces `always_use_package_imports`.
+- **Use `package:` prefix for everything in `lib/`.** `import 'package:websight/ai/agent_loop.dart';` — not relative imports. WebSight's `analysis_options.yaml` enforces `always_use_package_imports`.
 - **`tool/` is the exception.** Files under `tool/` use relative imports (the WebSight precedent — see `tool/configure.dart`'s `// ignore_for_file` directive).
 - **Order:**
   1. `dart:` imports

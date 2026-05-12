@@ -102,7 +102,7 @@ lib/
       billing_page.dart          — mode-specific UI: BYOK key management / managed credit balance / local capability info
   config/
     ai_config.dart               — typed AI block parsed via _typed<T>
-android/app/src/main/kotlin/io/github/blokzdev/websight_ai/edge/
+android/app/src/main/kotlin/cc/websight/app/edge/
   EdgeDefensePlugin.kt           — registers the platform method channel
   AICoreClient.kt                — ML Kit GenAI wrapper (defense ops in v1; agent reasoning in v2)
   CapabilityDetector.kt          — AICore availability probe; Tier A / A+ classification
@@ -1253,7 +1253,7 @@ site_profiles/
 ## 19. Roadmap
 
 **v1 (foundation — Preset A spearhead = Wikipedia, BYOK only, world-class scope):**
-- Repo rename + identity (`websight_ai`, `io.github.blokzdev.websight_ai`, "WebSight AI")
+- Identity migration (`com.app.websight` → `cc.websight.app`; Kotlin source path migration; Dart codebase keeps `websight` package identity — this is the AI variant of the same WebSight product)
 - Min Android API 34
 - `ai:` YAML block, parsing, validation (incl. `ai.security.*`, `ai.edge_defense.*`, `ai.billing.*`, `ai.router.*`)
 - Provider abstraction (`AgentProvider` + `EdgeDefenseProvider`) with all three cloud adapters (Anthropic + OpenAI + Google)
@@ -1357,7 +1357,7 @@ site_profiles/
 | Typed config models | `lib/config/webview_config.dart` |
 | Native screen pattern | `lib/native_screens/configurable_native_screen.dart` |
 | Lifecycle controllers | `lib/lifecycle/*.dart` |
-| Android entry + method channel | `android/app/src/main/kotlin/com/app/websight/MainActivity.kt` (existing); migrates to `io/github/blokzdev/websight_ai/MainActivity.kt` in the rename PR |
+| Android entry + method channel | `android/app/src/main/kotlin/com/app/websight/MainActivity.kt` (existing); migrates to `cc/websight/app/MainActivity.kt` in the rename PR |
 | Demo YAML | `assets/webview_config.yaml` |
 | Canonical YAML reference | `docs/internal/config-reference.yaml` |
 | JS bridge API docs | `docs/bridge-api.md` |
