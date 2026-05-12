@@ -21,7 +21,7 @@ lib/
     autonomy.dart                — two-axis confirmation policy
     cost_tracker.dart            — token/budget accounting
     providers/
-      provider.dart              — abstract AgentProvider + AgentEvent sealed type
+      agent_provider.dart        — abstract AgentProvider + AgentEvent sealed type
       anthropic.dart             — Claude
       openai.dart                — GPT
       google.dart                — Gemini
@@ -1139,12 +1139,12 @@ lib/ai/edge/
   aicore_edge_provider.dart           — Android Gemini Nano via ML Kit GenAI
   cloud_fallback_edge_provider.dart   — cheap-tier cloud model via BYOK key
   in_memory_edge_provider.dart        — fake for tests
-  apple_foundation_edge_provider.dart — iOS, v1.x
+  apple_foundation_edge_provider.dart — iOS, v3.x
   defense_coordinator.dart            — routing logic
   models.dart                         — shared types (verdicts, results)
 ```
 
-Three concrete implementations land in v1: `AICoreEdgeProvider`, `CloudFallbackEdgeProvider`, `InMemoryEdgeProvider`. The Apple Foundation Models implementation lands with iOS in v1.x.
+Three concrete implementations land in v1: `AICoreEdgeProvider`, `CloudFallbackEdgeProvider`, `InMemoryEdgeProvider`. The Apple Foundation Models implementation lands with iOS in v3.x.
 
 ### 17.2 The `DefenseCoordinator`
 
