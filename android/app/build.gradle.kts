@@ -35,7 +35,7 @@ android {
     defaultConfig {
         // CRITICAL: change this to your unique application id before publishing.
         applicationId = "io.github.blokzdev.websight_ai"
-        minSdk = 24
+        minSdk = 34
         targetSdk = 36
         versionCode = flutter.versionCode
         versionName = flutter.versionName
