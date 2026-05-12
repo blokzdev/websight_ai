@@ -55,7 +55,7 @@ class JsBridge {
   static const Set<String> _builtinMethods = <String>{'openPopup'};
 
   static const MethodChannel _platform =
-      MethodChannel('websight/method_channel');
+      MethodChannel('io.github.blokzdev.websight_ai/method_channel');
 
   /// Injects the helper script and instantiates the bridge object on `window`.
   Future<void> inject() async {

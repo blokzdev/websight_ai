@@ -27,7 +27,7 @@ import java.util.concurrent.Executors
 class MainActivity : FlutterActivity() {
 
     companion object {
-        private const val CHANNEL = "websight/method_channel"
+        private const val CHANNEL = "io.github.blokzdev.websight_ai/method_channel"
         private const val SCANNER_REQUEST_CODE = 2001
         private const val FILE_CHOOSER_REQUEST_CODE = 2002
         private const val TAG = "WebSightMainActivity"

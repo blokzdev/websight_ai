@@ -104,7 +104,7 @@ class WebsightWebViewController extends ChangeNotifier {
   bool _lockedOrientationForFullscreen = false;
 
   static const MethodChannel _platformChannel =
-      MethodChannel('websight/method_channel');
+      MethodChannel('io.github.blokzdev.websight_ai/method_channel');
 
   void _applyAndroidSpecifics() {
     if (controller.platform is! AndroidWebViewController) return;

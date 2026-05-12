@@ -7,7 +7,7 @@ import 'package:websight_ai/config/webview_config.dart';
 class AdsController extends ChangeNotifier {
   final WebSightConfig config;
   final MethodChannel _platformChannel =
-      const MethodChannel('websight/method_channel');
+      const MethodChannel('io.github.blokzdev.websight_ai/method_channel');
 
   bool _isMobileAdsSDKInitialized = false;
   bool get isMobileAdsSDKInitialized => _isMobileAdsSDKInitialized;
