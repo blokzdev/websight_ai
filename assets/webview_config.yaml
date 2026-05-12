@@ -172,6 +172,31 @@ routes:
     appbar_visible: true
     pull_to_refresh: false
 
+  # AI routes — first-PR scaffolding stubs (AI_SPEC.md §7).
+  # Each renders ConfigurableNativeScreen's labeled placeholder until the
+  # PR ladder lights it up (PR 14 wires real onboarding + audit log;
+  # later PRs wire AI Settings).
+  - path: "/native/ai-settings"
+    kind: "native"
+    title: "AI Settings"
+    icon: "Icons.smart_toy_outlined"
+    appbar_visible: true
+    pull_to_refresh: false
+
+  - path: "/native/onboarding"
+    kind: "native"
+    title: "Welcome"
+    icon: "Icons.waving_hand_outlined"
+    appbar_visible: true
+    pull_to_refresh: false
+
+  - path: "/native/audit-log"
+    kind: "native"
+    title: "Audit Log"
+    icon: "Icons.receipt_long_outlined"
+    appbar_visible: true
+    pull_to_refresh: false
+
 # -----------------------------------------------------------------------------
 # [WEBVIEW ENGINE]
 # -----------------------------------------------------------------------------
@@ -345,3 +370,185 @@ downloads:
   enabled: true
   use_android_download_manager: true
   support_blob_urls: true
+
+# -----------------------------------------------------------------------------
+# [AI] — WebSight AI agent configuration. Scaffolded by the first PR per
+# AI_SPEC.md §7; no runtime code consumes most of this yet. The locked
+# schema lives in docs/AI_DESIGN.md §10. Parsed by lib/config/ai_config.dart
+# via the _typed<T> hand-rolled pattern (no build_runner).
+#
+# Default state: `enabled: false`. Existing WebSight functionality is
+# unchanged when this block is present but disabled.
+# -----------------------------------------------------------------------------
+ai:
+  enabled: false
+
+  # Build-time preset. Mismatched downstream config raises AiConfigError
+  # at YAML load time (e.g. co_pilot + user_configurable.home_url: true).
+  preset: "co_pilot"             # co_pilot | browser
+
+  # Per-user runtime overrides exposed in AI Settings. Browser-preset only
+  # flags (home_url, trusted_domains) must stay false under co_pilot.
+  user_configurable:
+    home_url: false
+    trusted_domains: false
+    autonomy: true
+    require_validation: true
+
+  # Curated starter sites for browser preset (ignored under co_pilot).
+  presets: []
+
+  # BYOK onboarding scope and provider metadata.
+  byok:
+    required: true
+    providers: ["anthropic", "openai", "google"]
+    default_provider: "anthropic"
+    default_model:
+      anthropic: "claude-opus-4-7"
+      openai: "gpt-5"
+      google: "gemini-2.5-pro"
+    embeddings_provider: "voyage"   # voyage | openai (Anthropic ships no embeddings)
+
+  # Three-layer host enforcement; the agent's `navigate` tool gate is
+  # additive on top of the existing NavigationDelegate backstop.
+  navigation_policy:
+    home_only: false
+    trusted_domains: []
+    untrusted_action: "prompt"       # prompt | block | allow
+    log_all_navigations: true
+
+  # Two-axis autonomy (AI_DESIGN.md §9.2). Sensitive fills (password,
+  # card, ssn, pin) ALWAYS confirm — locked in code, not configurable.
+  autonomy:
+    action_defaults:
+      page_interactions: "auto"
+      cross_host_navigation: "confirm"
+      form_submits: "confirm"
+      native_actions: "confirm"
+    per_host_overrides: {}
+
+  # Floating dock launcher (rendered in AppShell stack, PR 7+).
+  dock:
+    enabled: true
+    initial_position: "bottom_right"
+    hideable: true
+    show_on_first_launch: true
+
+  # Token-budget cost discipline (AI_DESIGN.md §11).
+  budgets:
+    soft_token_limit_per_task: 50000
+    hard_token_limit_per_task: 100000
+    soft_step_threshold: 30
+    monthly_token_warning: 5000000
+
+  # Page-reading strategy (AI_DESIGN.md §4).
+  page_reader:
+    dom_digest: true
+    screenshot_on_request: true
+    set_of_marks: true
+    diff_subsequent_turns: true
+    perceptual_hash_dedup: true
+
+  # Memory architecture (AI_DESIGN.md §6). MIRIX-derived taxonomy.
+  memory:
+    core_enabled: true
+    episodic_enabled: true
+    semantic_enabled: true
+    resource_enabled: false           # v1.x
+    procedural_enabled: false         # v1.x
+    audit_log_enabled: true
+    embeddings_enabled: true
+    auto_extract_enabled: true        # auto-extract to pending_review queue
+    router:
+      strategy: "heuristic"
+      escalate_on_ambiguity: true     # cheap LLM fallback on low-confidence
+    retention:
+      episodic_days: 0                # 0 = keep forever
+      max_episodic_rows: 100000
+
+  # Privacy posture. Onboarding asks about crash reporting per
+  # AI_DESIGN.md §9.1 footnote.
+  privacy:
+    crash_reporting: "ask_at_onboarding"  # on | off | ask_at_onboarding
+    anonymous_usage_telemetry: false      # not shipping in v1
+
+  # Defense-in-depth pipeline (AI_THREAT_MODEL.md §4, AI_DESIGN.md §4.5–4.9).
+  # Sanitization, spotlighting, and flow tagging are always-on; only the
+  # classifier / paraphrase / self-reflect knobs are user-configurable.
+  security:
+    sanitization_enabled: true            # always-on emergency switch
+    spotlighting_enabled: true            # always-on emergency switch
+    classifier_mode: "edge_preferred"     # edge_preferred | cloud_only | local_heuristic | off
+    paraphrase:
+      enabled: false                      # off by default; opt-in per host
+      high_risk_hosts: []
+      on_classifier_flag: true            # auto-enable when classifier flags content
+      execution: "edge_preferred"
+      cloud_fallback_model:
+        provider: "anthropic"
+        model: "claude-haiku-4-5"
+    self_reflect_enabled: true            # fires only on destructive actions
+    self_reflect_execution: "edge_preferred"
+
+  # Edge defense routing (EDGE_DEFENSE.md §4). Tier A devices run defense
+  # ops on-device via Gemini Nano / AICore; Tier B/C fall back to cloud.
+  edge_defense:
+    mode: "auto"                          # auto | edge_only | cloud_only
+    download_strategy: "lazy"             # lazy | proactive
+    fallback_on_quota: true               # cloud fallback when AICore daily cap hit
+    show_quota_indicator: "near_exhaustion"  # always | near_exhaustion | never
+
+  # Billing / inference path (AI_DESIGN.md §1.4). v1 only honors `byok`;
+  # `managed` (v1.5) and `local` (v2) are architecturally accepted but
+  # rejected at parse time with a clear "not yet supported" error.
+  billing:
+    mode: "byok"                          # byok | managed | local
+    byok:
+      providers:
+        anthropic:
+          recommended: true
+          security_posture: "Adversarial training in place; recommended."
+          supported_models: ["claude-opus-4-7", "claude-sonnet-4-6", "claude-haiku-4-5"]
+          security_notes: "Constitutional AI training documented. Tool-use robustness research published."
+        google:
+          recommended: true
+          security_posture: "Adversarial training documented (Gemini 2.5+)."
+          supported_models: ["gemini-2.5-pro", "gemini-2.5-flash"]
+          warn_below_model: "gemini-2.5-pro"
+          security_notes: "Adversarial fine-tuning on indirect prompt injection from Gemini 2.5 onward (Shi et al. 2025)."
+        openai:
+          recommended: true
+          security_posture: "Adversarial training in place; less publicly documented."
+          supported_models: ["gpt-5", "gpt-5-mini"]
+          security_notes: "Adversarial training acknowledged; specific IPI-focused work less publicly detailed."
+    managed:                              # v1.5; ignored in v1
+      proxy_endpoint: ""
+      free_trial_credits: 100
+    local:                                # v2; ignored in v1
+      require_tier: "A+"
+
+  # Task-class router (AI_DESIGN.md §1.5). Three UI presets;
+  # per-class overrides for power users.
+  router:
+    preset: "balanced"                    # cost_conscious | balanced | quality_first
+    show_routing_badge: true              # per-turn tier × model × cost in chat panel
+    classifier:
+      mode: "heuristic"                   # heuristic (v1) | llm_assisted (v1.x)
+    overrides:                            # null = use preset default
+      routine: null
+      reasoning: null
+      heavy: null
+    cross_provider_overrides_allowed: true
+    tier_mapping:
+      anthropic:
+        routine: "claude-haiku-4-5"
+        reasoning: "claude-sonnet-4-6"
+        heavy: "claude-opus-4-7"
+      openai:
+        routine: "gpt-5-nano"
+        reasoning: "gpt-5-mini"
+        heavy: "gpt-5"
+      google:
+        routine: "gemini-flash"
+        reasoning: "gemini-2.5-pro"
+        heavy: "gemini-2.5-pro-thinking"
