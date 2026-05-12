@@ -1,19 +1,20 @@
 name: Feature request
-description: Suggest a feature for WebSight (a new YAML key, bridge method, or shell capability).
+description: Suggest a feature for WebSight AI (a new YAML key, bridge method, agent tool, defense, or shell capability).
 title: "[feat] "
 labels: ["enhancement", "triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        WebSight's scope is intentionally narrow: declarative
-        Android-WebView shell driven by `webview_config.yaml`. Features
-        that fit that scope are great. Features that drag the project
-        toward "general-purpose Flutter framework" or "iOS shell" are
-        usually deferred.
+        WebSight AI's scope is the agentic-browser path on top of the
+        WebSight substrate: declarative Android-WebView shell + AI
+        agent loop + defense pipeline + memory + task-class router.
+        Features outside that scope (iOS, general Flutter framework,
+        non-browser AI assistants) are deferred per the PR ladder
+        in AI_SPEC.md §7.
 
         For broad questions ("How would I do X?", "Should I...?"),
-        please use [Discussions](https://github.com/blokzdev/websight/discussions)
+        please use [Discussions](https://github.com/blokzdev/websight_ai/discussions)
         instead of an issue.
 
   - type: textarea

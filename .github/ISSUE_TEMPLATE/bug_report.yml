@@ -1,5 +1,5 @@
 name: Bug report
-description: Something is broken in WebSight itself (the shell, JS bridge, tooling, or build).
+description: Something is broken in WebSight AI (the shell, JS bridge, agent, defense layer, tooling, or build).
 title: "[bug] "
 labels: ["bug", "triage"]
 body:
@@ -11,8 +11,10 @@ body:
         fresh fork are misconfiguration that doctor can identify.
 
         For security issues (anything that could be exploited remotely
-        from a malicious page loaded in the WebView), please open a
-        [private security advisory](https://github.com/blokzdev/websight/security/advisories/new)
+        from a malicious page loaded in the WebView, or any concern
+        with the agent's defense pipeline against indirect prompt
+        injection), please open a
+        [private security advisory](https://github.com/blokzdev/websight_ai/security/advisories/new)
         instead of a public bug.
 
   - type: textarea
@@ -58,7 +60,7 @@ body:
   - type: input
     id: commit
     attributes:
-      label: WebSight commit SHA or tag
+      label: WebSight AI commit SHA or tag
       placeholder: "v1.0.0 / 7a9737e"
     validations:
       required: true
