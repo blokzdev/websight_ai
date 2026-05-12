@@ -6,7 +6,7 @@
 // into one file lets us unit-test them without spinning up a router or a
 // WebView.
 
-import 'package:websight/config/webview_config.dart';
+import 'package:websight_ai/config/webview_config.dart';
 
 /// Convert YAML-style `/web/item/{id}` into the go_router-style
 /// `/web/item/:id` so it participates in path-parameter matching.

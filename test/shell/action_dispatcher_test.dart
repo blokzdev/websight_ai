@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart' hide ActionDispatcher;
 import 'package:flutter_test/flutter_test.dart';
-import 'package:websight/shell/action_dispatcher.dart';
+import 'package:websight_ai/shell/action_dispatcher.dart';
 
 void main() {
   group('ActionDispatcher', () {

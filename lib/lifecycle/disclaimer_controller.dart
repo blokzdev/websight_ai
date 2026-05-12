@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:websight/config/feature_configs.dart';
+import 'package:websight_ai/config/feature_configs.dart';
 
 /// Tracks whether the user has accepted the unofficial-app disclaimer for
 /// the current text. Acceptance is keyed on a hash of the body text so

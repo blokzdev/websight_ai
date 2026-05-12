@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:websight/config/feature_configs.dart';
+import 'package:websight_ai/config/feature_configs.dart';
 
 /// Tracks app launches and triggers the in-app review prompt once the
 /// configured threshold is reached. The Play in-app review API is rate-limited

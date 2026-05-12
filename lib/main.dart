@@ -4,22 +4,22 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'package:websight/ads/ads_controller.dart';
-import 'package:websight/config/feature_configs.dart';
-import 'package:websight/config/webview_config.dart';
-import 'package:websight/firebase_options.dart';
-import 'package:websight/lifecycle/analytics_controller.dart';
-import 'package:websight/lifecycle/billing_controller.dart';
-import 'package:websight/lifecycle/disclaimer_controller.dart';
-import 'package:websight/lifecycle/fcm_controller.dart';
-import 'package:websight/lifecycle/permissions_controller.dart';
-import 'package:websight/lifecycle/rating_controller.dart';
-import 'package:websight/lifecycle/system_chrome_controller.dart';
-import 'package:websight/lifecycle/update_controller.dart';
-import 'package:websight/shell/app_router.dart';
-import 'package:websight/shell/disclaimer_gate.dart';
-import 'package:websight/shell/webview_signals.dart';
-import 'package:websight/theme.dart';
+import 'package:websight_ai/ads/ads_controller.dart';
+import 'package:websight_ai/config/feature_configs.dart';
+import 'package:websight_ai/config/webview_config.dart';
+import 'package:websight_ai/firebase_options.dart';
+import 'package:websight_ai/lifecycle/analytics_controller.dart';
+import 'package:websight_ai/lifecycle/billing_controller.dart';
+import 'package:websight_ai/lifecycle/disclaimer_controller.dart';
+import 'package:websight_ai/lifecycle/fcm_controller.dart';
+import 'package:websight_ai/lifecycle/permissions_controller.dart';
+import 'package:websight_ai/lifecycle/rating_controller.dart';
+import 'package:websight_ai/lifecycle/system_chrome_controller.dart';
+import 'package:websight_ai/lifecycle/update_controller.dart';
+import 'package:websight_ai/shell/app_router.dart';
+import 'package:websight_ai/shell/disclaimer_gate.dart';
+import 'package:websight_ai/shell/webview_signals.dart';
+import 'package:websight_ai/theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

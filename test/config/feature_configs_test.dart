@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:websight/config/feature_configs.dart';
+import 'package:websight_ai/config/feature_configs.dart';
 
 void main() {
   group('SplashFeature', () {

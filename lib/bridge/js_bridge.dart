@@ -8,10 +8,10 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:websight/config/feature_configs.dart';
-import 'package:websight/config/webview_config.dart';
-import 'package:websight/shell/route_paths.dart';
-import 'package:websight/webview/popup_window.dart';
+import 'package:websight_ai/config/feature_configs.dart';
+import 'package:websight_ai/config/webview_config.dart';
+import 'package:websight_ai/shell/route_paths.dart';
+import 'package:websight_ai/webview/popup_window.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 /// Stable error codes returned to the JS bridge layer. Mirrors the codes used

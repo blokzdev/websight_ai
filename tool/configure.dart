@@ -1,4 +1,4 @@
-// `tool/` is outside `lib/`, so it cannot use a `package:websight/...`
+// `tool/` is outside `lib/`, so it cannot use a `package:websight_ai/...`
 // import for its sibling library. The `always_use_package_imports` lint
 // is suppressed only on this line for that reason.
 // ignore_for_file: always_use_package_imports

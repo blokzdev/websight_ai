@@ -3,13 +3,13 @@ import 'package:go_router/go_router.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 
-import 'package:websight/ads/ads_controller.dart';
-import 'package:websight/config/feature_configs.dart';
-import 'package:websight/config/webview_config.dart';
-import 'package:websight/shell/action_dispatcher.dart';
-import 'package:websight/shell/route_paths.dart';
-import 'package:websight/shell/webview_signals.dart';
-import 'package:websight/utils/helpers.dart';
+import 'package:websight_ai/ads/ads_controller.dart';
+import 'package:websight_ai/config/feature_configs.dart';
+import 'package:websight_ai/config/webview_config.dart';
+import 'package:websight_ai/shell/action_dispatcher.dart';
+import 'package:websight_ai/shell/route_paths.dart';
+import 'package:websight_ai/shell/webview_signals.dart';
+import 'package:websight_ai/utils/helpers.dart';
 
 /// The top-level scaffold around the routed `child`. All visual chrome —
 /// AppBar actions, drawer, bottom tabs, FAB, ad placements — is sourced from

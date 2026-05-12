@@ -1,5 +1,5 @@
-name: websight
-description: Declarative Android WebView app shell driven by a single webview_config.yaml.
+name: websight_ai
+description: AI-native Flutter Android WebView shell forked from blokzdev/websight. Adds an agentic chat dock, JS-bridge agent tools, defense-in-depth against indirect prompt injection, and a task-class router on top of the WebSight substrate.
 publish_to: 'none'
 version: 1.0.0+1
 

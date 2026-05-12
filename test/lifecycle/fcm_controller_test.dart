@@ -6,8 +6,8 @@
 // bindings — out of scope for v1.
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:websight/config/webview_config.dart';
-import 'package:websight/lifecycle/fcm_controller.dart';
+import 'package:websight_ai/config/webview_config.dart';
+import 'package:websight_ai/lifecycle/fcm_controller.dart';
 
 void main() {
   // Fallback() ships fcmEnabled=false, which is exactly what we want

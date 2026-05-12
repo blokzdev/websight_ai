@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:websight/config/webview_config.dart';
+import 'package:websight_ai/config/webview_config.dart';
 
 /// Manages the lifecycle of ads, including consent gathering, loading, and displaying ads.
 class AdsController extends ChangeNotifier {

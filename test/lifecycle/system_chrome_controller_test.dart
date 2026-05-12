@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:websight/config/feature_configs.dart';
-import 'package:websight/lifecycle/system_chrome_controller.dart';
+import 'package:websight_ai/config/feature_configs.dart';
+import 'package:websight_ai/lifecycle/system_chrome_controller.dart';
 
 /// These tests verify the controller wires the right `SystemChrome` calls
 /// for each YAML mode, without depending on a running engine. We capture

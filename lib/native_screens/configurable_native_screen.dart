@@ -2,11 +2,11 @@ import 'package:flutter/material.dart' hide ActionDispatcher;
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
-import 'package:websight/config/feature_configs.dart';
-import 'package:websight/config/webview_config.dart';
-import 'package:websight/lifecycle/fcm_controller.dart';
-import 'package:websight/shell/action_dispatcher.dart';
-import 'package:websight/utils/helpers.dart';
+import 'package:websight_ai/config/feature_configs.dart';
+import 'package:websight_ai/config/webview_config.dart';
+import 'package:websight_ai/lifecycle/fcm_controller.dart';
+import 'package:websight_ai/shell/action_dispatcher.dart';
+import 'package:websight_ai/utils/helpers.dart';
 
 /// Single native screen used for every `kind: native` route.
 ///

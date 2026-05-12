@@ -4,7 +4,7 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 
-import 'package:websight/config/feature_configs.dart';
+import 'package:websight_ai/config/feature_configs.dart';
 
 /// Thin wrapper around `in_app_purchase` for the YAML-declared product list.
 ///

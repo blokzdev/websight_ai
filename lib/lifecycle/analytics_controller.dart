@@ -1,7 +1,7 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
-import 'package:websight/config/webview_config.dart';
+import 'package:websight_ai/config/webview_config.dart';
 
 /// Manages analytics and crash reporting.
 class AnalyticsController {

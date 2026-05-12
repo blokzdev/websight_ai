@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:in_app_update/in_app_update.dart';
-import 'package:websight/config/webview_config.dart';
+import 'package:websight_ai/config/webview_config.dart';
 
 /// Manages the in-app update flow.
 class UpdateController {

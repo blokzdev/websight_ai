@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 
-import 'package:websight/config/webview_config.dart';
+import 'package:websight_ai/config/webview_config.dart';
 
 /// Wraps Firebase Cloud Messaging behind a simple controller so the rest of
 /// the app does not depend on the SDK directly. Only initialized when
