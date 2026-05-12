@@ -1,4 +1,4 @@
-package com.app.websight
+package io.github.blokzdev.websight_ai
 
 import android.app.Activity
 import android.app.DownloadManager
@@ -13,8 +13,8 @@ import android.provider.MediaStore
 import android.util.Base64
 import android.util.Log
 import android.webkit.MimeTypeMap
-import com.app.websight.platform.ScannerActivity
-import com.app.websight.platform.UmpConsent
+import io.github.blokzdev.websight_ai.platform.ScannerActivity
+import io.github.blokzdev.websight_ai.platform.UmpConsent
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel

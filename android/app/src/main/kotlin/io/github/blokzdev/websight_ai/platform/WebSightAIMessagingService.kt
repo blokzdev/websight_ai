@@ -1,4 +1,4 @@
-package com.app.websight.platform
+package io.github.blokzdev.websight_ai.platform
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -7,10 +7,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.core.app.NotificationCompat
-import com.app.websight.MainActivity
-import com.app.websight.R
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import io.github.blokzdev.websight_ai.MainActivity
+import io.github.blokzdev.websight_ai.R
 
 /**
  * Default FCM receiver. The service is declared in the manifest but only does
@@ -19,17 +19,17 @@ import com.google.firebase.messaging.RemoteMessage
  *
  * Behavior:
  *   - Foreground messages: posted as a system notification on the
- *     `websight_default_channel`. The Dart side ALSO receives them via
+ *     `websight_ai_default_channel`. The Dart side ALSO receives them via
  *     `firebase_messaging`'s onMessage stream and may forward to JS via
  *     `WebSightBridge.onPush` — duplicates are deliberately avoided by checking
  *     a `silent` data flag.
  *   - Notification taps: launch [MainActivity] with a `route` extra so the
  *     Dart router can navigate to the deep-linked screen.
  */
-class WebSightMessagingService : FirebaseMessagingService() {
+class WebSightAIMessagingService : FirebaseMessagingService() {
 
     companion object {
-        const val CHANNEL_ID = "websight_default_channel"
+        const val CHANNEL_ID = "websight_ai_default_channel"
         const val EXTRA_ROUTE = "ws_route"
     }
 
@@ -96,7 +96,7 @@ class WebSightMessagingService : FirebaseMessagingService() {
             "General",
             NotificationManager.IMPORTANCE_DEFAULT,
         ).apply {
-            description = "Default WebSight push notifications"
+            description = "Default WebSight AI push notifications"
         }
         nm.createNotificationChannel(channel)
     }

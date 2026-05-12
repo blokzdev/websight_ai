@@ -1,4 +1,4 @@
-package com.app.websight.platform
+package io.github.blokzdev.websight_ai.platform
 
 import android.app.Activity
 import com.google.android.ump.ConsentInformation

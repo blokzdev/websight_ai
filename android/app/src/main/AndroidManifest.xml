@@ -81,7 +81,7 @@
              The service is gated by notifications.fcm_enabled at runtime; including it
              here is harmless if FCM is unused. -->
         <service
-            android:name=".platform.WebSightMessagingService"
+            android:name=".platform.WebSightAIMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -91,7 +91,7 @@
         <!-- Default FCM notification channel -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
-            android:value="websight_default_channel" />
+            android:value="websight_ai_default_channel" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@mipmap/ic_launcher" />

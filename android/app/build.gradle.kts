@@ -17,7 +17,7 @@ val keystoreProperties = Properties().apply {
 }
 
 android {
-    namespace = "com.app.websight"
+    namespace = "io.github.blokzdev.websight_ai"
     compileSdk = 36
     ndkVersion = flutter.ndkVersion
 
@@ -34,7 +34,7 @@ android {
 
     defaultConfig {
         // CRITICAL: change this to your unique application id before publishing.
-        applicationId = "com.app.websight"
+        applicationId = "io.github.blokzdev.websight_ai"
         minSdk = 24
         targetSdk = 36
         versionCode = flutter.versionCode
@@ -137,7 +137,7 @@ dependencies {
     // FileProvider, browser custom tabs
     implementation("androidx.browser:browser:1.10.0")
 
-    // Firebase Messaging (used directly by WebSightMessagingService).
+    // Firebase Messaging (used directly by WebSightAIMessagingService).
     // The firebase_messaging Flutter plugin uses `implementation` for its
     // native dependency, so the FirebaseMessagingService / RemoteMessage
     // classes are not automatically on our app's compile classpath. The BOM
