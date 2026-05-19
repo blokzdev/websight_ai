@@ -121,7 +121,7 @@ dependencies {
     // the app's compile classpath, KGP 2.x can't access the type and every
     // call on the returned future ("unbindAll", "bindToLifecycle",
     // "addListener") fails to resolve.
-    implementation("com.google.guava:guava:33.0.0-android")
+    implementation("com.google.guava:guava:33.6.0-android")
 
     // ML Kit barcode scanning (bundled model)
     implementation("com.google.mlkit:barcode-scanning:17.3.0")
