@@ -9,7 +9,7 @@ environment:
 dependencies:
   camera: ^0.11.3
   cupertino_icons: ^1.0.9
-  device_info_plus: ^12.4.0
+  device_info_plus: ^13.1.0
   firebase_analytics: ^12.3.0
   firebase_core: ^4.2.0
   firebase_crashlytics: ^5.2.0
@@ -28,7 +28,7 @@ dependencies:
   path_provider: ^2.1.2
   permission_handler: ^12.0.1
   provider: ^6.1.1
-  share_plus: ^12.0.2
+  share_plus: ^13.1.0
   shared_preferences: ^2.3.0
   url_launcher: ^6.2.5
   webview_flutter: ^4.13.1
@@ -44,7 +44,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   json_serializable: ^6.13.1
-  mason_logger: ^0.3.0       # used by tool/init.dart for the rich TUI mode
+  mason_logger: ^0.3.4       # used by tool/init.dart for the rich TUI mode
 
 flutter:
   uses-material-design: true
