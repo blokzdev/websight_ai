@@ -121,7 +121,7 @@ dependencies {
     // the app's compile classpath, KGP 2.x can't access the type and every
     // call on the returned future ("unbindAll", "bindToLifecycle",
     // "addListener") fails to resolve.
-    implementation("com.google.guava:guava:33.0.0-android")
+    implementation("com.google.guava:guava:33.6.0-android")
 
     // ML Kit barcode scanning (bundled model)
     implementation("com.google.mlkit:barcode-scanning:17.3.0")
@@ -147,6 +147,6 @@ dependencies {
     // Note: as of Firebase BOM 33.x the -ktx variants were deprecated and
     // their Kotlin extensions folded into the main artifact. Use the plain
     // `firebase-messaging` here, not `firebase-messaging-ktx`.
-    implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
+    implementation(platform("com.google.firebase:firebase-bom:34.13.0"))
     implementation("com.google.firebase:firebase-messaging")
 }
