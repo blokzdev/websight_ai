@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:websight/webview/popup_window.dart';
+import 'package:websight_ai/webview/popup_window.dart';
 
 /// Lightweight unit coverage for the popup window helpers. The full
 /// [PopupWindow] widget needs a platform WebView to exercise the navigation

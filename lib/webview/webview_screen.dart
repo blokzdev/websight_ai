@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:websight/config/feature_configs.dart';
-import 'package:websight/config/webview_config.dart';
-import 'package:websight/shell/webview_signals.dart';
-import 'package:websight/utils/helpers.dart';
-import 'package:websight/webview/webview_controller.dart' as wc;
+import 'package:websight_ai/config/feature_configs.dart';
+import 'package:websight_ai/config/webview_config.dart';
+import 'package:websight_ai/shell/webview_signals.dart';
+import 'package:websight_ai/utils/helpers.dart';
+import 'package:websight_ai/webview/webview_controller.dart' as wc;
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewScreen extends StatefulWidget {

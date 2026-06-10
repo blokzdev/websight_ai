@@ -1,4 +1,4 @@
-package com.app.websight.platform
+package io.github.blokzdev.websight_ai.platform
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -15,7 +15,7 @@ import androidx.camera.core.ImageProxy
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
-import com.app.websight.R
+import io.github.blokzdev.websight_ai.R
 import com.google.mlkit.vision.barcode.BarcodeScanner
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
 import com.google.mlkit.vision.barcode.BarcodeScanning

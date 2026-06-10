@@ -50,7 +50,7 @@
 }
 
 # --- Keep model classes parsed from JSON (json_serializable generated) ---
--keep class com.app.websight.** { *; }
+-keep class io.github.blokzdev.websight_ai.** { *; }
 
 # --- Stripe / future plugins safety net ---
 -dontnote **

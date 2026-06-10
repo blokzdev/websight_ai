@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
-import 'package:websight/lifecycle/disclaimer_controller.dart';
+import 'package:websight_ai/lifecycle/disclaimer_controller.dart';
 
 /// Wraps [child] with a first-launch unofficial-app disclaimer when
 /// `legal.unofficial_disclaimer.enabled` is true. The dialog is modal

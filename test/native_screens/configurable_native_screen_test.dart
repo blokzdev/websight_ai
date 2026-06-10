@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
-import 'package:websight/config/feature_configs.dart';
-import 'package:websight/config/webview_config.dart';
-import 'package:websight/lifecycle/fcm_controller.dart';
-import 'package:websight/native_screens/configurable_native_screen.dart';
+import 'package:websight_ai/config/feature_configs.dart';
+import 'package:websight_ai/config/webview_config.dart';
+import 'package:websight_ai/lifecycle/fcm_controller.dart';
+import 'package:websight_ai/native_screens/configurable_native_screen.dart';
 
 void main() {
   // A minimal config sufficient to render either variant. We deliberately

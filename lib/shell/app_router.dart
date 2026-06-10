@@ -2,13 +2,13 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:websight/config/feature_configs.dart';
-import 'package:websight/config/webview_config.dart';
-import 'package:websight/lifecycle/analytics_controller.dart';
-import 'package:websight/native_screens/configurable_native_screen.dart';
-import 'package:websight/shell/app_shell.dart';
-import 'package:websight/shell/route_paths.dart';
-import 'package:websight/webview/webview_screen.dart';
+import 'package:websight_ai/config/feature_configs.dart';
+import 'package:websight_ai/config/webview_config.dart';
+import 'package:websight_ai/lifecycle/analytics_controller.dart';
+import 'package:websight_ai/native_screens/configurable_native_screen.dart';
+import 'package:websight_ai/shell/app_shell.dart';
+import 'package:websight_ai/shell/route_paths.dart';
+import 'package:websight_ai/webview/webview_screen.dart';
 
 /// Builds the GoRouter from the YAML route table.
 ///

@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:websight/config/feature_configs.dart';
+import 'package:websight_ai/config/feature_configs.dart';
 
 /// Applies the configured `system_ui` block to `SystemChrome`.
 ///

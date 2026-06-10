@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:websight/bridge/js_bridge.dart';
-import 'package:websight/config/feature_configs.dart';
-import 'package:websight/config/webview_config.dart';
-import 'package:websight/lifecycle/system_chrome_controller.dart';
-import 'package:websight/webview/popup_window.dart';
+import 'package:websight_ai/bridge/js_bridge.dart';
+import 'package:websight_ai/config/feature_configs.dart';
+import 'package:websight_ai/config/webview_config.dart';
+import 'package:websight_ai/lifecycle/system_chrome_controller.dart';
+import 'package:websight_ai/webview/popup_window.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
 
@@ -104,7 +104,7 @@ class WebsightWebViewController extends ChangeNotifier {
   bool _lockedOrientationForFullscreen = false;
 
   static const MethodChannel _platformChannel =
-      MethodChannel('websight/method_channel');
+      MethodChannel('io.github.blokzdev.websight_ai/method_channel');
 
   void _applyAndroidSpecifics() {
     if (controller.platform is! AndroidWebViewController) return;

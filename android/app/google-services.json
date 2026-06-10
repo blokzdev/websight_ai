@@ -1,16 +1,16 @@
 {
-  "_comment": "PLACEHOLDER values — replace with your real Firebase project by running `flutterfire configure` (see README). Builds will succeed with this file as-is, but Firebase Analytics / Crashlytics / FCM will not work until you regenerate it.",
+  "_comment": "PLACEHOLDER values — replace with your real Firebase project by running `flutterfire configure` (see android/app/README.md). Builds will succeed with this file as-is, but Firebase Analytics / Crashlytics / FCM will not work until you regenerate it for application id io.github.blokzdev.websight_ai.",
   "project_info": {
     "project_number": "0000000000",
-    "project_id": "your-firebase-project-id",
-    "storage_bucket": "your-firebase-project-id.firebasestorage.app"
+    "project_id": "websight-ai-placeholder",
+    "storage_bucket": "websight-ai-placeholder.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:0000000000:android:0000000000000000000000",
         "android_client_info": {
-          "package_name": "com.app.websight"
+          "package_name": "io.github.blokzdev.websight_ai"
         }
       },
       "oauth_client": [],

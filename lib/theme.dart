@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:websight/config/webview_config.dart';
-import 'package:websight/utils/helpers.dart';
+import 'package:websight_ai/config/webview_config.dart';
+import 'package:websight_ai/utils/helpers.dart';
 
 /// The AppTheme class is responsible for generating the application's theme
 /// based on the dynamic configuration provided in `webview_config.yaml`.

@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:websight/config/webview_config.dart';
-import 'package:websight/shell/route_paths.dart';
+import 'package:websight_ai/config/webview_config.dart';
+import 'package:websight_ai/shell/route_paths.dart';
 
 RouteConfig _route(String path, {String kind = 'webview', String? url}) {
   return RouteConfig(

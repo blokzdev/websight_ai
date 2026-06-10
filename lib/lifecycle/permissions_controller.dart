@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-import 'package:websight/config/webview_config.dart';
+import 'package:websight_ai/config/webview_config.dart';
 
 /// Requests runtime permissions according to the YAML config. Only permissions
 /// flagged in the config are prompted; the system also short-circuits the
